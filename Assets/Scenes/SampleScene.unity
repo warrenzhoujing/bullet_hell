@@ -113,64 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &105900557
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 105900559}
-  - component: {fileID: 105900558}
-  - component: {fileID: 105900560}
-  m_Layer: 0
-  m_Name: BossBulletOrigin (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &105900558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105900557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 660a55ed613934f1b84ad10ff2552c13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotations:
-  - {x: 0, y: 0, z: -90}
-  - {x: 0, y: 0, z: -75}
-  - {x: 0, y: 0, z: -105}
-  BossBullet: {fileID: 1854167982022908, guid: 7977aadfaad5a42f6b59fdd8e5346842, type: 2}
-  reloadSpeed: 8
---- !u!4 &105900559
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105900557}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -2.7666667, z: 0}
-  m_LocalScale: {x: 0.5, y: 3.333333, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1292660520}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &105900560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105900557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908bdc620171b4279a44f9823b804c0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &510821646
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010627141}
   - component: {fileID: 1010627140}
+  - component: {fileID: 1010627142}
   m_Layer: 0
   m_Name: BossBulletOrigin (2)
   m_TagString: Untagged
@@ -436,7 +379,7 @@ MonoBehaviour:
   rotations:
   - {x: 0, y: 0, z: -90}
   BossBullet: {fileID: 1854167982022908, guid: 7977aadfaad5a42f6b59fdd8e5346842, type: 2}
-  reloadSpeed: 8
+  reloadSpeed: 4
 --- !u!4 &1010627141
 Transform:
   m_ObjectHideFlags: 0
@@ -444,12 +387,31 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010627139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.7666667, z: 0}
+  m_LocalPosition: {x: 1, y: -2.7666667, z: 0}
   m_LocalScale: {x: 0.5, y: 3.333333, z: 1}
   m_Children: []
   m_Father: {fileID: 1292660520}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010627142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010627139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 908bdc620171b4279a44f9823b804c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localWaypoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: -2, y: 0, z: 0}
+  speed: 3
+  Cyclic: 0
+  WaitTime: 0
+  EaseValue: 0
 --- !u!1 &1119932880
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,8 +819,8 @@ Transform:
   - {fileID: 1872946809}
   - {fileID: 1578739322}
   - {fileID: 2022900676}
-  - {fileID: 105900559}
   - {fileID: 1010627141}
+  - {fileID: 2116875986}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1860,7 +1822,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2022900676}
   - component: {fileID: 2022900675}
-  - component: {fileID: 2022900677}
   m_Layer: 0
   m_Name: BossBulletOrigin
   m_TagString: Untagged
@@ -1892,20 +1853,73 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2022900674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -2.7666667, z: 0}
+  m_LocalPosition: {x: 0, y: -2.7666667, z: 0}
   m_LocalScale: {x: 0.5, y: 3.333333, z: 1}
   m_Children: []
   m_Father: {fileID: 1292660520}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2022900677
+--- !u!1 &2116875985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2116875986}
+  - component: {fileID: 2116875988}
+  - component: {fileID: 2116875987}
+  m_Layer: 0
+  m_Name: BossBulletOrigin (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2116875986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116875985}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: -2.7666667, z: 0}
+  m_LocalScale: {x: 0.5, y: 3.333333, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1292660520}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2116875987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2022900674}
+  m_GameObject: {fileID: 2116875985}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 908bdc620171b4279a44f9823b804c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localWaypoints:
+  - {x: 0, y: 0, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: -2, y: 0, z: 0}
+  speed: 3
+  Cyclic: 0
+  WaitTime: 0
+  EaseValue: 0
+--- !u!114 &2116875988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116875985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660a55ed613934f1b84ad10ff2552c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotations:
+  - {x: 0, y: 0, z: -90}
+  BossBullet: {fileID: 1854167982022908, guid: 7977aadfaad5a42f6b59fdd8e5346842, type: 2}
+  reloadSpeed: 4
