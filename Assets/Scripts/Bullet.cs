@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	public float speed;
-	public string damageTag;
-	public bool alwaysGoUp;
+	public int enemySpeed;
+	public Vector3 moveDirection;
 
+	void Start () {
+		
+		
+	}
 	
 	void Update () {
-		if (alwaysGoUp) {
-			transform.Translate(Vector2.up * Time.deltaTime * speed, Space.World);	
-		} else {
-			transform.Translate(transform.right * Time.deltaTime * speed, Space.World);
-		}
+		transform.Translate(transform.right * enemySpeed * Time.deltaTime);
 
-		if (Mathf.Abs(transform.position.y) > 5) {
-			Destroy(gameObject);
-		}
-	}
-
-	void OnCollisionEnter2D (Collision2D col) {
-		if (col.gameObject.tag == "boss") {
+		if (Mathf.Abs(transform.position.x) > 8 || Mathf.Abs(transform.position.y) > 6) {
 			Destroy(gameObject);
 		}
 	}
