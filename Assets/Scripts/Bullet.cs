@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	public int enemySpeed;
+	public int speed;
 	public Vector3 moveDirection;
-
-	void Start () {
-		
-		
-	}
+	public string DestroyTagMask;
 	
 	void Update () {
-		transform.Translate(transform.right * enemySpeed * Time.deltaTime);
+		transform.Translate(transform.right * speed * Time.deltaTime);
 
-		if (Mathf.Abs(transform.position.x) > 8 || Mathf.Abs(transform.position.y) > 6) {
+		if (Mathf.Abs(transform.position.x) > 7 || Mathf.Abs(transform.position.y) > 5) {
 			Destroy(gameObject);
 		}
+	}
+
+	void OnCollisionEnter2D (Collision2D col) {
+		if (col.gameObject.tag != DestroyTagMask) {
+			Destroy(gameObject);
+		}
+		
 	}
 }

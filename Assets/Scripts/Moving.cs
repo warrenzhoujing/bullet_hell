@@ -38,6 +38,7 @@ public class Moving : MonoBehaviour {
 	Vector3 CalculateMovement () {
 
 		if (Time.time < nextMoveTime) {
+			Debug.Log(true);
 			return Vector3.zero;
 		}
 

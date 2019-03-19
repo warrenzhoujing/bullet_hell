@@ -8,6 +8,8 @@ public class ObjectOrigin : MonoBehaviour {
 
 	public GameObject Object;
 
+	public bool shootInObjectDirection;
+
 	public float reloadSpeed;
 	public float startDelay;
 
@@ -36,7 +38,9 @@ public class ObjectOrigin : MonoBehaviour {
 				Quaternion enemy_rotation = Quaternion.Euler(rotations[i]);
 				GameObject obj = (GameObject)Instantiate(Object);
 				obj.transform.position = transform.position;
-				obj.transform.rotation = enemy_rotation;
+
+				obj.transform.rotation = !shootInObjectDirection?enemy_rotation:transform.rotation;
+				
 				obj.SetActive(true);
 			}
 			
